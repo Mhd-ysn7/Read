@@ -1,0 +1,14 @@
+<ul id="students_ul"></ul>
+
+<script>
+    var ul=document.getElementById("students_ul")
+    fetch("https://rendering-ohmb.onrender.com/students")
+    .then(response => response.json())
+    .then(json => (
+        json.forEach(student => {
+            let li =document.createElement("li")
+            li.innerHTML=student.name;
+            ul.appendChild(li)
+        })
+    ))
+</script>
